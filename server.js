@@ -11,7 +11,7 @@ app.use(express.urlencoded({ extended: true }));
 const dbOptions = { useNewUrlParser: true, useUnifiedTopology: true };
 mongoose.connect(process.env.DATABASE_URL, dbOptions)
     .then(() => console.log('MongoDB connected'))
-    .catch(err => console.error('MongoDB connection error:', err));
+    .catch(err => console.error('MongoDB connection error:', err.message));
 
 // Sample Route
 app.get('/api/recommendations', (req, res) => {
